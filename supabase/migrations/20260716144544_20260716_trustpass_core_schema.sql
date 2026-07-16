@@ -1,0 +1,2 @@
+-- This migration was applied via the database MCP tool.
+-- See 20260716144622_20260716_trustpass_core_schema.sql for the full schema.
