@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 160 40% 94%;
+    --accent-foreground: 160 84% 25%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 160 84% 39%;
+    --chart-1: 160 84% 39%;
+    --chart-2: 200 70% 50%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.75rem;
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+  }
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 20% 98%;
+    --card: 222 40% 11%;
+    --card-foreground: 210 20% 98%;
+    --popover: 222 40% 11%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 160 84% 45%;
+    --primary-foreground: 222 47% 8%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 160 30% 20%;
+    --accent-foreground: 160 84% 60%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 160 84% 45%;
+    --chart-1: 160 84% 45%;
+    --chart-2: 200 70% 55%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --success: 160 84% 45%;
+    --success-foreground: 222 47% 8%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 222 47% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-mesh {
+    background-image:
+      radial-gradient(circle at 20% 20%, hsl(160 84% 39% / 0.08), transparent 40%),
+      radial-gradient(circle at 80% 30%, hsl(200 70% 50% / 0.08), transparent 40%),
+      radial-gradient(circle at 50% 80%, hsl(160 84% 39% / 0.06), transparent 40%);
+  }
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+  .animate-pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
